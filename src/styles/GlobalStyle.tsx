@@ -22,6 +22,7 @@ const globalStyle = css`
     body {
         line-height: 1.5;
         -webkit-font-smoothing: antialiased;
+        background-color: ${theme.color.bgColor};
     }
     img,
     picture,
