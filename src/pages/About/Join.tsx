@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import joinBg from "@assets/joinBg.svg";
 import { theme } from "@styles/theme";
@@ -94,7 +93,7 @@ const modalWrapper = css`
 `;
 
 const modal = css`
-    width: 527px;
+    width: 500px;
     height: 684px;
     background-color: ${theme.color.white};
     border-radius: 20px;

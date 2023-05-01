@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Link, Outlet } from "react-router-dom";
 import { ReactComponent as ModamLogo } from "@assets/logo.svg";
