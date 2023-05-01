@@ -1,11 +1,25 @@
 import { css } from "@emotion/react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useMatch, useNavigate } from "react-router-dom";
 import { ReactComponent as ModamLogo } from "@assets/logo.svg";
 import { theme } from "@styles/theme";
 import preview from "@assets/preview.svg";
 import { ReactComponent as ChevronDown } from "@assets/chevron-down-double.svg";
 
 export const About = () => {
+    const loginMatch = useMatch("/login");
+    const navigate = useNavigate();
+    const goToBottom = () => {
+        window.scrollTo(0, document.body.scrollHeight);
+    };
+
+    const goLogin = () => {
+        if (loginMatch) {
+            goToBottom();
+        } else {
+            navigate("/login");
+        }
+    };
+
     return (
         <div css={container}>
             <header css={header}>
@@ -13,9 +27,9 @@ export const About = () => {
                     <ModamLogo css={logoImg} />
                     <h3 css={logoText}>MODAM</h3>
                 </div>
-                <Link css={loginBtn} to="/login">
+                <button css={loginBtn} onClick={goLogin}>
                     로그인
-                </Link>
+                </button>
             </header>
             <article css={contentsWrapper}>
                 <section css={sloganBox}>
