@@ -1,9 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { ReactComponent as ModamLogo } from "@assets/logo.svg";
 import { theme } from "@styles/theme";
 import preview from "@assets/preview.svg";
+import { ReactComponent as ChevronDown } from "@assets/chevron-down-double.svg";
 
 export const About = () => {
     return (
@@ -31,14 +32,18 @@ export const About = () => {
                     </Link>
                 </section>
                 <img css={previewImg} src={preview} alt="preview" />
+                <span css={scrollDownIcon}>
+                    <ChevronDown stroke="#ffffff" />
+                </span>
             </article>
+            <Outlet />
         </div>
     );
 };
 
 const container = css`
     width: 100vw;
-    height: 100vh;
+
     background-color: ${theme.color.white};
 `;
 
@@ -84,7 +89,7 @@ const loginBtn = css`
 
 const contentsWrapper = css`
     width: 100vw;
-    height: calc(100vh - 99px);
+    height: calc(100vh - 80px);
     display: flex;
     justify-content: space-between;
 `;
@@ -125,4 +130,17 @@ const joinBtn = css`
 
 const previewImg = css`
     margin-right: 50px;
+`;
+
+const scrollDownIcon = css`
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    bottom: 1rem;
+    border-radius: 50%;
+    right: calc(50vw - 48px);
+    background-color: ${theme.color.primary};
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
