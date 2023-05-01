@@ -15,6 +15,9 @@ const globalStyle = css`
     * {
         margin: 0;
     }
+    html {
+        font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui;
+    }
     html,
     body {
         height: 100%;
